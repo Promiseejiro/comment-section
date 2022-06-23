@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.form-control {
+  background-color: var(--White);
+  padding: 1em;
+  margin-top: 1em;
+  border-radius: 10px;
+}
+
+textarea {
+  min-height: 6em;
+  width: 100%;
+  border: 1px solid var(--Light-grayish-blue);
+  padding: 0.5em;
+}
+.form-control div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5em;
+}
+
+.submit-btn {
+  background-color: var(--Moderat-blue);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--White);
+  border-radius: 10px;
+  height: 2.5em;
+  width: 5em;
+}

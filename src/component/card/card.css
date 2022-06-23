@@ -1,0 +1,85 @@
+.comment-card-container {
+  width: 100%;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "avartar user-name time "
+    "comment comment comment"
+    "like-container like-container reply";
+  align-items: center;
+  padding: 1em;
+  margin-top: 0.5em;
+  background-color: var(--White);
+  width: 100%;
+}
+
+.user-avartar {
+  grid-area: avartar;
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+}
+
+.user-name {
+  grid-area: user-name;
+  transform: translateX(-60%);
+}
+
+.time {
+  grid-area: time;
+  transform: translateX(-70%);
+}
+
+.comment-message {
+  grid-area: comment;
+  padding: 1em 0;
+  width: 100%;
+}
+
+svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1em;
+  width: 1em;
+  transform: translateY(10%);
+}
+
+.like-btn-continer {
+  grid-area: like-container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 6em;
+  background-color: var(--Light-gray);
+  border-radius: 10px;
+}
+
+.btn-delete-edit-reply-container {
+  grid-area: reply;
+  color: var(--Moderat-blue);
+}
+
+.btn-delete-edit-reply-container div {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+@media (min-width: 735px) {
+  .like-btn-continer {
+    flex-direction: column;
+    width: 2em;
+  }
+
+  .card {
+    grid-template-areas:
+      "like-container  avartar user-name  time reply"
+      "like-container comment comment   comment comment"
+      "like-container comment comment comment comment";
+    grid-template-columns: 1fr 2fr 2fr 5fr 1fr;
+  }
+}
