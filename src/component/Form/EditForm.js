@@ -12,7 +12,7 @@ export default function EditForm({
   reply,
 }) {
   return (
-    <form onSubmit={UpdateComment}>
+    <form className="reply-form" onSubmit={UpdateComment}>
       <div className={classname}>
         {reply && <img className="reply-img" src={image} alt="J" />}
         <textarea
