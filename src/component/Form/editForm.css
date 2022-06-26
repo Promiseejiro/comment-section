@@ -4,6 +4,10 @@ form {
   border-radius: 10px;
 }
 
+.reply-form{
+margin-top:0.5em;
+}
+
 .edit-form-control {
   /* padding: 0.5em 0; */
 }
