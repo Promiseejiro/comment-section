@@ -1,0 +1,31 @@
+form {
+  background-color: var(--White);
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.edit-form-control {
+  /* padding: 0.5em 0; */
+}
+
+.edit-form-control div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-update {
+  color: var(--White);
+  background-color: var(--Moderat-blue);
+  padding: 1.3em 1em;
+  border-radius: 10px;
+}
+
+.reply-form {
+  display: flex;
+  gap: 1em;
+}
+
+.reply-img {
+  height: 2em;
+  width: 2em;
+}

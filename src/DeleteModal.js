@@ -15,12 +15,12 @@ export default function ({ deleteHandler, calcelDelete }) {
         <div className="modal-delete-btn-container">
           <Button
             btnStyle={"modal-btn cancel-btn"}
-            btnText={"no cancel"}
+            btnText={"No cancel"}
             btnFunction={calcelDelete}
           />
           <Button
             btnStyle={"modal-btn delete-btn"}
-            btnText={"delete-btn"}
+            btnText={"Delete"}
             btnFunction={deleteHandler}
           />
         </div>

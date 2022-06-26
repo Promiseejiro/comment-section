@@ -2,17 +2,21 @@
   width: 100%;
 }
 
+.comment-section {
+  width: 100%;
+  background-color: var(--White);
+  border-radius: 10px;
+}
+
 .card {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 0.5fr 4fr;
   grid-template-areas:
     "avartar user-name time "
     "comment comment comment"
     "like-container like-container reply";
-  align-items: center;
   padding: 1em;
   margin-top: 0.5em;
-  background-color: var(--White);
   width: 100%;
 }
 
@@ -25,54 +29,93 @@
 
 .user-name {
   grid-area: user-name;
-  transform: translateX(-60%);
+  color: var(--Dark-blue);
+  padding-right: 1em;
+  margin-left: 0.5em;
 }
 
 .time {
   grid-area: time;
-  transform: translateX(-70%);
+  font-size: 13px;
+  color: var(--Grayish-Blue);
+  padding-top: 0.3rem;
+}
+
+.comment-message-container {
+  grid-area: comment;
 }
 
 .comment-message {
-  grid-area: comment;
   padding: 1em 0;
   width: 100%;
-}
-
-svg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 1em;
-  width: 1em;
-  transform: translateY(10%);
+  font-size: 16px;
+  color: var(--Grayish-Blue);
+  font-weight: 400;
+  line-height: 1.3em;
 }
 
 .like-btn-continer {
   grid-area: like-container;
+}
+
+.like-btn-continer div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 6em;
   background-color: var(--Light-gray);
+  padding: 0.5em;
+  width: 6em;
   border-radius: 10px;
+}
+
+#numbers-of-like {
+  color: var(--Moderat-blue);
+  font-size: 18px;
 }
 
 .btn-delete-edit-reply-container {
   grid-area: reply;
+  display: flex;
+  justify-content: flex-end;
   color: var(--Moderat-blue);
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.btn:hover {
+  opacity: 0.6;
 }
 
 .btn-delete-edit-reply-container div {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 1em;
 }
 
+.btn-reply {
+  color: var(--Moderat-blue);
+}
+
+.btn-delete {
+  color: var(--Soft-Red);
+}
+
+.btn-edit {
+  color: var(--Moderat-blue);
+}
+
 @media (min-width: 735px) {
-  .like-btn-continer {
+  .comment-message {
+    padding-right: 2em;
+  }
+
+  .like-btn-continer div {
     flex-direction: column;
-    width: 2em;
+    width: 2.2em;
   }
 
   .card {
@@ -80,6 +123,6 @@ svg {
       "like-container  avartar user-name  time reply"
       "like-container comment comment   comment comment"
       "like-container comment comment comment comment";
-    grid-template-columns: 1fr 2fr 2fr 5fr 1fr;
+    grid-template-columns: 1fr 1fr 1.2fr 5fr 1fr;
   }
 }

@@ -14,19 +14,23 @@
 textarea {
   min-height: 6em;
   width: 100%;
-  border: 1px solid var(--Light-grayish-blue);
+  border: 0.5px solid var(--Moderat-blue);
   padding: 0.5em;
+  border-radius: 10px;
 }
+
+textarea:focus {
+  border: 0.5px solid var(--Moderat-blue);
+}
+
 .form-control div {
   display: flex;
   justify-content: space-between;
   margin-top: 0.5em;
 }
 
-.submit-btn {
+.btn-submit {
   background-color: var(--Moderat-blue);
-  font-size: 17px;
-  font-weight: 700;
   color: var(--White);
   border-radius: 10px;
   height: 2.5em;

@@ -1,34 +1,33 @@
-import { useContext, react } from "react";
-
-// component
-import Button from "../Button";
+// css
+import "./editForm.css";
 // useravatar
 import image from "../../images/avatars/image-juliusomo.png";
 
 export default function EditForm({
-  hideshowReplyForm,
-  editCommentMessageHandler,
-  submitHandler,
+  editedInputHandler,
+  UpdateComment,
+  updateInput,
   text,
+  classname,
+  reply,
 }) {
   return (
-    <div className="form-control comment-section">
-      <textarea
-        placeholder="Add a comment"
-        name=""
-        id=""
-        onChange={editCommentMessageHandler}
-      ></textarea>
-      <div>
-        <img className="user-avartar" src={image} alt="" />
-        <div onClick={hideshowReplyForm}>
-          <Button
-            btnStyle={"submit-btn"}
-            btnText={text}
-            btnFunction={submitHandler}
-          />
+    <form onSubmit={UpdateComment}>
+      <div className={classname}>
+        {reply && <img className="reply-img" src={image} alt="J" />}
+        <textarea
+          placeholder="Add a comment"
+          name=""
+          id=""
+          onChange={editedInputHandler}
+          value={updateInput}
+        ></textarea>
+        <div>
+          <button type="submit" className="btn btn-update">
+            {text}
+          </button>{" "}
         </div>
       </div>
-    </div>
+    </form>
   );
 }

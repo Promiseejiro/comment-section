@@ -3,31 +3,27 @@ import image from "../../images/avatars/image-juliusomo.png";
 
 // css
 import "./comment-form.css";
-// component
-import Button from "../Button";
 
-// context
-import CommentContext from "../../CommentContext";
 export default function CommentForm({
-  commentMessageHandler,
   submitCommentHandler,
+  inputHandler,
+  commentInput,
 }) {
   return (
-    <div className="form-control comment-section">
-      <textarea
-        placeholder="Add a comment"
-        name=""
-        id=""
-        onChange={commentMessageHandler}
-      ></textarea>
+    <form action="" onSubmit={submitCommentHandler}>
       <div>
-        <img className="user-avartar" src={image} alt="" />
-        <Button
-          btnStyle={"submit-btn"}
-          btnText="Send"
-          btnFunction={submitCommentHandler}
-        />
+        <div className="form-control comment-section">
+          <textarea
+            value={commentInput}
+            onChange={inputHandler}
+            name="first"
+          ></textarea>
+          <div>
+            <img className="user-avartar" src={image} alt="" />
+            <button className="btn btn-submit">submit</button>
+          </div>
+        </div>
       </div>
-    </div>
+    </form>
   );
 }

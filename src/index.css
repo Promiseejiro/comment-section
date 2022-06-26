@@ -39,9 +39,16 @@ button {
   padding: 1em;
 }
 
+.comment-container {
+  margin-bottom: 1em;
+}
+
 .reply-container {
   padding-left: 0.5em;
-  border-left: 1px solid var(--Grayish-Blue);
+  border-left: 1px solid var(--Light-grayish-blue);
+  padding-left: 1em;
+  margin-left: 0.5em;
+  margin-top: 0.5em;
 }
 
 .delete-Modal-container {
@@ -58,7 +65,8 @@ button {
 }
 
 .delete-Modal {
-  width: 100%;
+  width: 90%;
+  margin: auto;
   background-color: var(--White);
   padding: 1.5em;
   border-radius: 10px;
@@ -77,9 +85,9 @@ button {
 
 .modal-delete-btn-container {
   text-transform: capitalize;
-  display: flex;
-  justify-content: space-between;
-  gap: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
   width: 100%;
 }
 
@@ -106,6 +114,12 @@ button {
     max-width: 735px;
     margin: auto;
   }
+
+  .reply-container {
+    padding-left: 2em;
+    margin-left: 2em;
+  }
+
   .delete-Modal {
     max-width: 350px;
   }
