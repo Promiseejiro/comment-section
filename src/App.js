@@ -7,9 +7,8 @@ import CommentForm from "./component/Form/CommentForm";
 import { Data } from "./data/Data";
 
 export default function App() {
-  //iniTialization
+  //initialization
 
-  const unique_id = uuid();
 
   // state
   const [commentInput, setCommentInput] = useState("");
@@ -21,22 +20,20 @@ export default function App() {
     setCommentInput(e.target.value);
   };
 
-  const submitCommentHandler = (e) => {
-    e.preventDefault();
-    setComments([
+  const submitCommentHandler = (comment) => {
+    const newComment = [
       {
-        id: unique_id,
+        id: uuid(),
         userAvatar: juliussomoAvatar,
         user: "juliusomo",
-        timeCommented: "2 week ago",
-        commentMessage: commentInput,
+        timeCommented: new Date().getTime(),
+        commentMessage: comment,
         like: 0,
         allReplies: [],
       },
       ...comments,
-    ]);
-    setCommentInput("");
-    saveToLoacalStorage();
+    ]
+    saveToLoacalStorage(newComment);
   };
 
   const editedInputHandler = (e) => {
@@ -60,8 +57,8 @@ export default function App() {
   };
 
   const deleteHandler = (id) => {
-    setComments(comments.filter((comment) => comment.id !== id));
-    saveToLoacalStorage();
+    const newComments = comments.filter((comment) => comment.id !== id);
+    saveToLoacalStorage(newComments);
   };
 
   const likeHandler = (id) => {
@@ -81,8 +78,9 @@ export default function App() {
   };
 
   // save to local storage
-  const saveToLoacalStorage = () => {
-    localStorage.setItem("comments", JSON.stringify(comments));
+  const saveToLoacalStorage = (cmts) => {
+    localStorage.setItem("comments", JSON.stringify(cmts));
+    setComments(cmts);
   };
 
   const getCommentsFromLocalStorage = () => {
@@ -94,7 +92,7 @@ export default function App() {
     }
   };
 
-  useEffect(() => {}, [comments]);
+  // useEffect(() => {}, [comments]);
 
   useEffect(() => {
     getCommentsFromLocalStorage();

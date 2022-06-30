@@ -30,7 +30,7 @@ export default function Comment({
         replyInput={replyInput}
         submitReply={submitReply}
       />
-      <div className="reply-container">
+      {/* <div className="reply-container">
         {comment.allReplies.map((reply) => (
           <Card
             key={reply.id}
@@ -47,7 +47,7 @@ export default function Comment({
             submitReply={submitReply}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
