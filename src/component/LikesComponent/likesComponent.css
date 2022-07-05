@@ -1,0 +1,29 @@
+.like-btn-continer div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--Light-gray);
+  padding: 0.5em;
+  width: 6em;
+  border-radius: 10px;
+}
+
+#numbers-of-like {
+  color: var(--Moderat-blue);
+  font-size: 18px;
+}
+
+.like-btn-icon {
+  font-weight: 800;
+}
+
+.like-btn-icon:hover {
+  color: var(--Moderat-blue);
+}
+
+@media (min-width: 735px) {
+  .like-btn-continer div {
+    flex-direction: column;
+    width: 2.2em;
+  }
+}

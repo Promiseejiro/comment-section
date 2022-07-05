@@ -1,9 +1,9 @@
 import React from "react";
 
 // components
-import Button from "./component/Button";
+import Button from "./component/button/Button";
 
-export default function ({ deleteHandler, calcelDelete }) {
+export default function DeleteModal({ deleteHandler, calcelDelete }) {
   return (
     <div className="delete-Modal-container">
       <div className="delete-Modal">
@@ -19,7 +19,7 @@ export default function ({ deleteHandler, calcelDelete }) {
             btnFunction={calcelDelete}
           />
           <Button
-            btnStyle={"modal-btn delete-btn"}
+            btnStyle={"modal-btn delete-modal-btn"}
             btnText={"Delete"}
             btnFunction={deleteHandler}
           />

@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.comment-section {
+.comment-Card {
   width: 100%;
   background-color: var(--White);
   border-radius: 10px;
@@ -28,6 +28,8 @@
 }
 
 .user-name {
+  display: flex;
+  align-items: center;
   grid-area: user-name;
   color: var(--Dark-blue);
   padding-right: 1em;
@@ -35,10 +37,20 @@
 }
 
 .time {
+  display: flex;
+  align-items: center;
   grid-area: time;
   font-size: 13px;
   color: var(--Grayish-Blue);
   padding-top: 0.3rem;
+}
+
+.you {
+  padding: 0.1em 0.3em;
+  margin-left: -0.5em;
+  margin-right: 0.5rem;
+  background-color: var(--Moderat-blue);
+  color: var(--White);
 }
 
 .comment-message-container {
@@ -50,27 +62,9 @@
   width: 100%;
   font-size: 16px;
   color: var(--Grayish-Blue);
-  font-weight: 400;
+  font-weight: 200;
+  font-size: 12px;
   line-height: 1.3em;
-}
-
-.like-btn-continer {
-  grid-area: like-container;
-}
-
-.like-btn-continer div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--Light-gray);
-  padding: 0.5em;
-  width: 6em;
-  border-radius: 10px;
-}
-
-#numbers-of-like {
-  color: var(--Moderat-blue);
-  font-size: 18px;
 }
 
 .btn-delete-edit-reply-container {
@@ -78,6 +72,9 @@
   display: flex;
   justify-content: flex-end;
   color: var(--Moderat-blue);
+}
+.like-btn-continer {
+  grid-area: like-container;
 }
 
 .btn {
@@ -89,23 +86,12 @@
   opacity: 0.6;
 }
 
-.btn-delete-edit-reply-container div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1em;
+.edit-form {
+  padding-top: 1em;
 }
 
-.btn-reply {
-  color: var(--Moderat-blue);
-}
-
-.btn-delete {
-  color: var(--Soft-Red);
-}
-
-.btn-edit {
-  color: var(--Moderat-blue);
+.reply-form {
+  margin-top: 0.5em;
 }
 
 @media (min-width: 735px) {
@@ -113,16 +99,14 @@
     padding-right: 2em;
   }
 
-  .like-btn-continer div {
-    flex-direction: column;
-    width: 2.2em;
-  }
-
   .card {
     grid-template-areas:
       "like-container  avartar user-name  time reply"
       "like-container comment comment   comment comment"
       "like-container comment comment comment comment";
-    grid-template-columns: 1fr 1fr 1.2fr 5fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 5fr 1fr;
+  }
+  .user-name {
+    margin-left: -25px;
   }
 }
