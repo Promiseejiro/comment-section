@@ -1,8 +1,6 @@
 // useravatar
 import image from "../../images/avatars/image-juliusomo.png";
 import { useState } from "react";
-
-import Image from "../../images/avatars/image-juliusomo.webp";
 // css
 import "./form.css";
 

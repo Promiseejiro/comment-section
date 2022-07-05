@@ -52,11 +52,13 @@ export default function App() {
   };
 
   const UpdateComment = (id, value) => {
-    const newComments = comments.map((comment) =>
-      comment.id === id ? { ...comment, commentMessage: value } : comment
-    );
-    saveCommentsToLoacalStorage(newComments);
-    setComments(newComments);
+    if (value) {
+      const newComments = comments.map((comment) =>
+        comment.id === id ? { ...comment, commentMessage: value } : comment
+      );
+      saveCommentsToLoacalStorage(newComments);
+      setComments(newComments);
+    }
   };
 
   const deleteHandler = (id) => {

@@ -13,14 +13,14 @@ export default function Card({
   deleteHandler,
   UpdateComment,
   addLike,
- removeLike
+  removeLike,
 }) {
   // state
   const [showReplyForm, setShowReplyForm] = useState(false);
   const [showEditForm, setShowEditForm] = useState(false);
   const [disableBtn, setDisableBtn] = useState(false);
   const [deleteModalPage, setDeleteModalPage] = useState(false);
-const [disable,setDisable ] = useState(false)
+  const [disable, setDisable] = useState(false);
   // function
   const displayReplyForm = () => {
     setShowReplyForm(true);
@@ -29,7 +29,7 @@ const [disable,setDisable ] = useState(false)
   const DisplayEditForm = () => {
     setShowEditForm(true);
     setDisableBtn(true);
-      setDisable(true);
+    setDisable(true);
   };
 
   const submitReply = (value) => {
@@ -46,16 +46,15 @@ const [disable,setDisable ] = useState(false)
     UpdateComment(comment.id, value);
     setShowEditForm(false);
     setDisableBtn(false);
-     setDisable(false);
+    setDisable(false);
   };
 
   const cancelOperation = () => {
     setShowEditForm(false);
     setShowReplyForm(false);
     setDisableBtn(false);
-      setDisable(false);
-console.log('hey');
-
+    setDisable(false);
+    console.log("hey");
   };
 
   const likeHandler = () => {
@@ -126,9 +125,11 @@ console.log('hey');
           <Form
             btnText="Reply"
             submitCommentHandler={submitReply}
-            comment={comment}
             formControlStyle="comment-form-control"
             cancel={true}
+            editValue=""
+            cancelOperation=""
+            editing=""
           />
         )}
       </div>
