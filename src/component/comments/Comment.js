@@ -22,8 +22,8 @@ export default function Comment({
       <div className="reply-container">
         {comment.allReplies.map((reply) => (
           <Card
-            submitCommentHandler={submitCommentHandler}
             key={reply.id}
+            submitCommentHandler={submitCommentHandler}
             comment={reply}
             addLike={addLike}
             deleteHandler={deleteHandler}

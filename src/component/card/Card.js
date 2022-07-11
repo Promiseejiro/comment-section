@@ -54,7 +54,6 @@ export default function Card({
     setShowReplyForm(false);
     setDisableBtn(false);
     setDisable(false);
-    console.log("hey");
   };
 
   const likeHandler = () => {
@@ -118,7 +117,7 @@ export default function Card({
               disable={disable}
             />
           </div>
-        </div>
+        </div> 
       </div>
       <div className="reply-form">
         {showReplyForm && (
@@ -128,7 +127,9 @@ export default function Card({
             formControlStyle="comment-form-control"
             cancel={true}
             editValue=""
-            cancelOperation=""
+            cancelOperation={()=>{
+              ''
+            }}
             editing=""
           />
         )}

@@ -28,27 +28,24 @@ export default function App() {
   };
 
   const submitReplyHandler = (value, id) => {
-    if (value) {
-      const newComments = comments.map((comment) =>
-        comment.id === id
-          ? {
-              ...comment,
-              allReplies: [
-                {
-                  id: new Date().toDateString(),
-                  userAvatar: juliussomoAvatar,
-                  user: "juliusomo",
-                  timeCommented: new Date().toDateString(),
-                  commentMessage: value,
-                  like: 0,
-                },
-              ],
-            }
-          : comment
-      );
-      setComments(newComments);
-      saveCommentsToLoacalStorage(newComments);
-    }
+    const reply = {
+      id: uuidv4(),
+      userAvatar: juliussomoAvatar,
+      user: "juliusomo",
+      timeCommented: new Date().toDateString(),
+      commentMessage: value,
+      like: 0,
+    };
+
+    comments.filter((comment) => {
+      if (comment.id === id) {
+        comment.allReplies.unshift(reply);
+      }
+    });
+    const newComments = comments;
+    setComments(newComments);
+    saveCommentsToLoacalStorage(newComments);
+    getCommentsFromLocalStorage();
   };
 
   const UpdateComment = (id, value) => {
@@ -62,8 +59,7 @@ export default function App() {
   };
 
   const deleteHandler = (id) => {
-    const newComments = comments.filter((comment) => comment.id !== id);
-
+    var newComments = comments.filter((comment) => comment.id !== id);
     saveCommentsToLoacalStorage(newComments);
     setComments(newComments);
   };
