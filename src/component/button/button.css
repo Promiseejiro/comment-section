@@ -1,0 +1,39 @@
+button {
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 0.6em;
+ padding: .5em;
+}
+
+.delete-modal-btn {
+  background-color: var(--Soft-Red);
+  color: #fff;
+}
+
+.cancel-btn {
+  background-color: var(--Dark-blue);
+}
+
+
+.btn-disable{
+background-color: var(--white);
+/* box-shadow: 1px 1px 1px rgba(0,0, 0, .5); */
+opacity: .5;
+border: 1px solid  rgba(0,0, 0, .3);
+}
+
+.btn-reply {
+  color: var(--Moderat-blue);
+}
+
+.btn-delete {
+  color: var(--Soft-Red);
+}
+
+.btn-edit {
+  color: var(--Moderat-blue);
+}

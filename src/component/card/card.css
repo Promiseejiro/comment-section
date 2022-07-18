@@ -1,0 +1,112 @@
+.comment-card-container {
+  width: 100%;
+}
+
+.comment-Card {
+  width: 100%;
+  background-color: var(--White);
+  border-radius: 10px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 4fr;
+  grid-template-areas:
+    "avartar user-name time "
+    "comment comment comment"
+    "like-container like-container reply";
+  padding: 1em;
+  margin-top: 0.5em;
+  width: 100%;
+}
+
+.user-avartar {
+  grid-area: avartar;
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+}
+
+.user-name {
+  display: flex;
+  align-items: center;
+  grid-area: user-name;
+  color: var(--Dark-blue);
+  padding-right: 1em;
+  margin-left: 0.5em;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  grid-area: time;
+  font-size: 13px;
+  color: var(--Grayish-Blue);
+  padding-top: 0.3rem;
+}
+
+.you {
+  padding: 0.1em 0.3em;
+  margin-left: -0.5em;
+  margin-right: 0.5rem;
+  background-color: var(--Moderat-blue);
+  color: var(--White);
+}
+
+.comment-message-container {
+  grid-area: comment;
+}
+
+.comment-message {
+  padding: 1em 0;
+  width: 100%;
+  font-size: 16px;
+  color: var(--Grayish-Blue);
+  font-weight: 200;
+  font-size: 12px;
+  line-height: 1.3em;
+}
+
+.btn-delete-edit-reply-container {
+  grid-area: reply;
+  display: flex;
+  justify-content: flex-end;
+  color: var(--Moderat-blue);
+}
+.like-btn-continer {
+  grid-area: like-container;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.btn:hover {
+  opacity: 0.6;
+}
+
+.edit-form {
+  padding-top: 1em;
+}
+
+.reply-form {
+  margin-top: 0.5em;
+}
+
+@media (min-width: 735px) {
+  .comment-message {
+    padding-right: 2em;
+  }
+
+  .card {
+    grid-template-areas:
+      "like-container  avartar user-name  time reply"
+      "like-container comment comment   comment comment"
+      "like-container comment comment comment comment";
+    grid-template-columns: 1fr 1fr 1fr 5fr 1fr;
+  }
+  .user-name {
+    margin-left: -25px;
+  }
+}
