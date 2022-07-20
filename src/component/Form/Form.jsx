@@ -7,7 +7,7 @@ import "./form.css";
 export default function Form({
   cancelOperation,
   cancel,
- editing,
+  editing,
   btnText,
   formControlStyle,
   submitCommentHandler,
@@ -45,7 +45,9 @@ export default function Form({
           name="first"
         ></textarea>
         <div className="btn-submit-container">
-          <button className="btn btn-submit">{btnText}</button>
+          <button className="btn btn-submit" type="submit">
+            {btnText}
+          </button>
         </div>
       </div>
     </form>

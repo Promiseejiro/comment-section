@@ -64,7 +64,7 @@ body {
 
 .delete-Modal p {
   padding: 1em 0;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   color: var(--Grayish-Blue);
 }
 
@@ -77,7 +77,7 @@ body {
 }
 
 .modal-btn {
-  padding: 1.5em 1em;
+  padding: 1ems;
   color: var(--White);
   font-size: 16px;
   font-weight: 700;
@@ -112,5 +112,9 @@ body {
     display: flex;
     gap: 1em;
     background-color: var(--White);
+  }
+
+  .modal-btn {
+    padding: 1em 1.2em;
   }
 }

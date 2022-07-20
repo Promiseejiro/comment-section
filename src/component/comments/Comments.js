@@ -5,9 +5,14 @@ export default function Comments({
   comments,
   submitCommentHandler,
   UpdateComment,
-  deleteHandler,
-  addLike,
-  removeLike,
+  deleteCommentHandler,
+  addLikeToComment,
+  unlilkeComment,
+  deleteReplyHandler,
+  editReply,
+  addLikeToReply,
+  unlikeReply,
+  nextedReplyNotification,
 }) {
   return (
     <section>
@@ -17,9 +22,14 @@ export default function Comments({
             comment={comment}
             submitCommentHandler={submitCommentHandler}
             UpdateComment={UpdateComment}
-            addLike={addLike}
-            removeLike={removeLike}
-            deleteHandler={deleteHandler}
+            addLikeToComment={addLikeToComment}
+            unlilkeComment={unlilkeComment}
+            deleteCommentHandler={deleteCommentHandler}
+            deleteReplyHandler={deleteReplyHandler}
+            editReply={editReply}
+            addLikeToReply={addLikeToReply}
+            unlikeReply={unlikeReply}
+            nextedReplyNotification={nextedReplyNotification}
           />
         </div>
       ))}

@@ -1,5 +1,5 @@
 // imports
-import { useContext, useState } from "react";
+import { useState } from "react";
 import ReplyAndEditAndDelete from "../Reply-and-delete-and-edit-component/Reply-and-delete-and-edit-Component";
 import DeleteModal from "../../DeleteModal";
 import LikeContainer from "../LikesComponent/LikeContainer";
@@ -9,6 +9,7 @@ import Form from "../Form/Form";
 import "./card.css";
 export default function Card({
   comment,
+  replyId,
   submitCommentHandler,
   deleteHandler,
   UpdateComment,
@@ -38,15 +39,19 @@ export default function Card({
   };
 
   const deletecomment = () => {
-    deleteHandler(comment.id);
+    deleteHandler(comment.id, replyId);
     setDeleteModalPage(false);
   };
 
   const editHandler = (value) => {
-    UpdateComment(comment.id, value);
+    UpdateComment(replyId, comment.id, value);
     setShowEditForm(false);
     setDisableBtn(false);
     setDisable(false);
+  };
+
+  const showdeleteModalPage = () => {
+    setDeleteModalPage(true);
   };
 
   const cancelOperation = () => {
@@ -57,11 +62,11 @@ export default function Card({
   };
 
   const likeHandler = () => {
-    addLike(comment.id);
+    addLike(comment.id, replyId);
   };
 
   const unLikeHandler = () => {
-    removeLike(comment.id);
+    removeLike(comment.id, replyId);
   };
 
   return (
@@ -109,15 +114,13 @@ export default function Card({
             <ReplyAndEditAndDelete
               comment={comment}
               displayReplyForm={displayReplyForm}
-              deletecomment={() => {
-                setDeleteModalPage(true);
-              }}
+              deletecomment={showdeleteModalPage}
               disableBtn={disableBtn}
               DisplayEditForm={DisplayEditForm}
               disable={disable}
             />
           </div>
-        </div> 
+        </div>
       </div>
       <div className="reply-form">
         {showReplyForm && (
@@ -127,9 +130,7 @@ export default function Card({
             formControlStyle="comment-form-control"
             cancel={true}
             editValue=""
-            cancelOperation={()=>{
-              ''
-            }}
+            cancelOperation={cancelOperation}
             editing=""
           />
         )}

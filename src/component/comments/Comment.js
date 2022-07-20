@@ -4,10 +4,15 @@ import Card from "../card/Card";
 export default function Comment({
   comment,
   submitCommentHandler,
-  deleteHandler,
+  deleteCommentHandler,
   UpdateComment,
-  addLike,
-  removeLike,
+  editReply,
+  addLikeToComment,
+  unlilkeComment,
+  deleteReplyHandler,
+  unlikeReply,
+  addLikeToReply,
+  nextedReplyNotification,
 }) {
   return (
     <div className="comment-container">
@@ -15,20 +20,21 @@ export default function Comment({
         comment={comment}
         submitCommentHandler={submitCommentHandler}
         UpdateComment={UpdateComment}
-        addLike={addLike}
-        deleteHandler={deleteHandler}
-        removeLike={removeLike}
+        addLike={addLikeToComment}
+        deleteHandler={deleteCommentHandler}
+        removeLike={unlilkeComment}
       />
       <div className="reply-container">
-        {comment.allReplies.map((reply) => (
+        {comment.allReplies.map((reply, index) => (
           <Card
-            key={reply.id}
-            submitCommentHandler={submitCommentHandler}
+            replyId={comment.id}
+            key={index}
+            submitCommentHandler={nextedReplyNotification}
             comment={reply}
-            addLike={addLike}
-            deleteHandler={deleteHandler}
-            UpdateComment={UpdateComment}
-            removeLike={removeLike}
+            addLike={addLikeToReply}
+            UpdateComment={editReply}
+            removeLike={unlikeReply}
+            deleteHandler={deleteReplyHandler}
           />
         ))}
       </div>
