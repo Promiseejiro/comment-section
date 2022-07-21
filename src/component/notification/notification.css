@@ -33,4 +33,5 @@
 
 .notification-details p {
   color: var(--Grayish-Blue);
+  text-transform: lowercase;
 }

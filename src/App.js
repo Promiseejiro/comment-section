@@ -18,7 +18,7 @@ export default function App() {
 
   const nextedReplyNotification = () => {
     setNotification(true);
-    setNotificationMessage("Currently working on nexted comments");
+    setNotificationMessage("Currently working on nexted Replies");
   };
 
   const submitCommentHandler = (inputValue) => {
@@ -39,7 +39,7 @@ export default function App() {
       saveCommentsToLoacalStorage(newComments);
     } else {
       if (!inputValue) {
-        setNotificationMessage("Cannot submit an empty comment");
+        setNotificationMessage("Cannot submit an empty Commentmessage");
         setNotification(true);
       }
     }
@@ -89,6 +89,8 @@ export default function App() {
   };
 
   const submitReplyHandler = (value, id) => {
+    const commentBeenReplied = comments.find((comment) => comment.id === id);
+
     if (value) {
       const reply = {
         id: uuidv4(),
@@ -96,6 +98,7 @@ export default function App() {
         user: "juliusomo",
         timeCommented: new Date().toDateString(),
         commentMessage: value,
+        replyUser: "@" + commentBeenReplied.user,
         like: 0,
       };
 
@@ -110,7 +113,7 @@ export default function App() {
     } else {
       if (!value) {
         setNotification(true);
-        setNotificationMessage("Cannot submit an empty comment");
+        setNotificationMessage("Cannot submit an empty Replymessage");
       }
     }
   };

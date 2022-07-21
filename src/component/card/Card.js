@@ -92,7 +92,9 @@ export default function Card({
           </div>
           <div className="comment-message-container">
             {!showEditForm && (
-              <p className="comment-message">{comment.commentMessage} </p>
+              <p className="comment-message">
+                <span>{comment.replyUser}</span> {comment.commentMessage}{" "}
+              </p>
             )}
             <div className="edit-form">
               {showEditForm && (
