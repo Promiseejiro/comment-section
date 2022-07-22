@@ -8,6 +8,10 @@
   border-radius: 10px;
 }
 
+.btn-btn{
+  padding: .5em .2em;
+}
+
 #numbers-of-like {
   color: var(--Moderat-blue);
   font-size: 18px;

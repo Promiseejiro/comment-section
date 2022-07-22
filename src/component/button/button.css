@@ -5,7 +5,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1em .5em;
+}
+
+.btn-text{
+  padding-left: .3em;
 }
 
 .delete-modal-btn {
@@ -30,6 +33,7 @@ button {
 
 .btn-delete {
   color: var(--Soft-Red);
+  margin-right: .5em;
 }
 
 .btn-edit {
