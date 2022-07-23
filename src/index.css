@@ -50,7 +50,7 @@ body {
 }
 
 .delete-Modal {
-  width: 90%;
+  width: 80%;
   margin: auto;
   background-color: var(--White);
   padding: 1.5em;
