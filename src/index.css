@@ -77,12 +77,12 @@ body {
 }
 
 .modal-btn {
-  padding: 1ems;
   color: var(--White);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   border-radius: 10px;
   text-transform: uppercase;
+  padding: .5em .2em;
 }
 
 .delete-btn {
@@ -112,10 +112,6 @@ body {
     display: flex;
     gap: 1em;
     background-color: var(--White);
-  }
-
-  .modal-btn {
-    padding: 1em 1.2em;
   }
   .reply-container .user-name {
   margin-left: -5px;
